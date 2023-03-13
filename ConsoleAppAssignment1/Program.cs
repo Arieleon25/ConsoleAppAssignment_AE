@@ -28,12 +28,20 @@ namespace ConsoleAppAssignment1
 
             //INFINITE LOOP ASSIGNMENT PART TWO
 
-            //for (; ; )
-            //{
-            //    Console.WriteLine("Infinite loop");
-            //}
+            int count = 0;
 
-            // ASSIGNMENT PART THREE
+            while (true)
+            {
+                Console.WriteLine("Infinite loop > 10", count);
+                count++;
+
+                if (count > 10)
+                {
+                    break;
+                }
+            }
+
+               // ASSIGNMENT PART THREE
 
             Console.WriteLine("\nList of years! { 1969, 1970, 1995, 1998, 2004 } \n");
 
@@ -67,12 +75,11 @@ namespace ConsoleAppAssignment1
                 if (animeList[k] == animeInput)
                 {
                     Console.WriteLine(k);
-                    break;
                 }
-                else
+                else if (!animeList.Contains(animeInput))
                 {
                     Console.WriteLine("Text isn't in the list");
-                    
+                    break;
                 }
             }
 
@@ -106,26 +113,31 @@ namespace ConsoleAppAssignment1
 
             Console.WriteLine("\nColor List\n");
 
-            List<string> colorList = new List<string>() { "Red", "Yellow", "Blue", "Orange", "Green", "Purple", "Gray", "Green", "Red", "White", "Black" };
+            List<string> colorList = new List<string>() { "Red", "Yellow", "Blue", "Orange", "Green", "Purple"};
+            List<string> colorList2 = new List<string>() { "Gray", "Green", "Red", "White", "Black", "Orange" };
 
             foreach (string color in colorList)
             {
-                if (color == colorList[7])
+                if (colorList2.Contains(color))
                 {
-                    Console.WriteLine(color + "\nAppeared in the list");
-                }
-                else if (color == colorList[8])
-                {
-                    Console.WriteLine(color + "\nAppeared in the list");
+                    Console.WriteLine(color + " Duplicated");
                 }
                 else
                 {
-                    Console.WriteLine(color);
+                    Console.WriteLine(color + "Unique");
                 }
             }
+         
 
             Console.ReadLine();
         }
     }
 }
 
+//foreach (string color2 in colorList2)
+//{
+//    Console.WriteLine(color2);
+//    if (colorList2.Contains(color))
+//    {
+
+//    }
